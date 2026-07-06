@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOSIK • Мои проекты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Блок с фото */
+        .header-image {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            margin-bottom: 25px;
+            border: 2px solid rgba(255,255,255,0.05);
+        }
+
+        .header-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Заголовок */
+        .profile-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .profile-title h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 36px;
+            letter-spacing: 1px;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #ffffff, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-title p {
+            font-size: 15px;
+            color: #888;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Кнопки */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-card {
+            text-decoration: none;
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 18px 20px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card:hover {
+            transform: translateY(-4px);
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+
+        /* Левая полоска при наведении */
+        .link-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #00C6FF, #0072FF); /* Синий неон */
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            transform-origin: bottom;
+        }
+
+        .link-card:hover::before {
+            transform: scaleY(1);
+            transform-origin: top;
+        }
+
+        .icon-placeholder {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background-color: rgba(255,255,255,0.05);
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .icon-placeholder svg {
+            width: 22px;
+            height: 22px;
+            fill: #fff;
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .link-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+            letter-spacing: 0.3px;
+        }
+
+        .link-card p {
+            font-size: 13px;
+            color: #999;
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .arrow {
+            position: absolute;
+            right: 20px;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover .arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+            font-weight: 500;
+        }
+        
+        .footer span {
+            color: #00C6FF;
+        }
+
+        @media (max-width: 480px) {
+            .header-image { max-width: 200px; }
+            .profile-title h1 { font-size: 30px; }
+            .link-card { padding: 16px; }
+            .icon-placeholder { width: 40px; height: 40px; margin-right: 12px; }
+            .link-card h3 { font-size: 15px; }
+            .link-card p { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="header-image">
+            <img src="1000493084.jpg" alt="DOSIK">
+        </div>
+
+        <div class="profile-title">
+            <h1>DOSIK</h1>
+            <p>Все мои официальные ссылки</p>
+        </div>
+
+        <div class="links-container">
+
+            <a href="https://t.me/FREEFIRE_SOFTWARE" class="link-card" target="_blank">
+                <div class="icon-placeholder">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.77 4.85-1.78.11 0 .35.03.51.16.13.11.17.26.19.38.01.07.02.16.02.26z"/></svg>
+                </div>
+                <div class="text-content">
+                    <h3>Telegram Канал</h3>
+                    <p>Основной канал с обновлениями и новостями</p>
+                </div>
+                <div class="arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="https://t.me/ffpainelff" class="link-card" target="_blank">
+                <div class="icon-placeholder">
+                    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12zM7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/></svg>
+                </div>
+                <div class="text-content">
+                    <h3>Чат для общения</h3>
+                    <p>Обсуждения, помощь и наше комьюнити</p>
+                </div>
+                <div class="arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="https://t.me/xitersov" class="link-card" target="_blank">
+                <div class="icon-placeholder">
+                    <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                </div>
+                <div class="text-content">
+                    <h3>Купить Софты без бана</h3>
+                    <p>Актуальные цены на софт и услуги (в $)</p>
+                </div>
+                <div class="arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+            <a href="https://t.me/xitersov" class="link-card" target="_blank">
+                <div class="icon-placeholder">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                </div>
+                <div class="text-content">
+                    <h3>Связь со мной (Админ)</h3>
+                    <p>По всем вопросам и заказам</p>
+                </div>
+                <div class="arrow">
+                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"><path d="M1 1L7 7L1 13" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            <p>© <span>@xitersov</span>. Все права защищены.</p>
+        </div>
+    </div>
+</body>
+</html>
